@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="todo.css" />
+    <script src="todo.js" defer></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="header">
+        <div class="header-eyebrow">Your workspace</div>
+        <h1>Stay <span>focused</span>,<br />get things done.</h1>
+        <div style="margin-top: 1rem">
+          <div class="progress-wrap">
+            <div class="progress-bar" id="progressBar"></div>
+          </div>
+          <div class="progress-label">
+            <span id="progressText">No tasks yet</span>
+            <strong id="progressPct">—</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="input-card">
+        <div class="input-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></svg>
+        </div>
+        <input
+          type="text"
+          id="todoInput"
+          placeholder="Add a new task…"
+          autocomplete="off"
+        />
+        <button id="addBtn" aria-label="Add task">
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+        </button>
+      </div>
+
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="active">Active</button>
+        <button class="filter-btn" data-filter="completed">Done</button>
+      </div>
+
+      <div id="todoList"></div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+  </body>
+</html>
